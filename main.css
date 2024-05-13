@@ -1,0 +1,251 @@
+body {
+  background-color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+#img_menu {
+  width: 30px;
+}
+#img_search {
+  width: 30px;
+}
+.div3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#search {
+  outline: none;
+  border-radius: 45px;
+  width: 100%;
+}
+
+#links{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#lk{
+ text-decoration: none;
+}
+
+/* section hero */
+#hero{
+    background-image: url('./picture/Applause_Crowd_People_Silhouette__Cheerful_Crowd_Cheering_Stock_Vector_-_Illustration_of_clapping__excited__113960607-removebg-preview.png');
+    width: 100%;
+    height: 500px;
+    
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+}
+#headingHero,
+#paragraphHero,
+#linkHero{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#linkHero{
+    text-decoration: none;
+    background-color: black;
+    border-radius: 10px;
+    color: white;
+    font-style: bold;
+    width: 100px;
+    margin: auto;
+    padding: 10px 20px;
+   
+}
+#linkHero:hover{
+    background-color: transparent;
+    color: black;
+    border: 2px solid black;
+    transition:1.5s ;
+}
+#headingHero{
+    font-style: bold;
+}
+/* section events */
+#headingevent{
+    border-left: 3px solid blue;
+    padding-left: 10px;
+}
+
+.event{
+    background-color: white;
+    border-radius: 20px;
+    width: 300px;
+    margin-bottom: 45px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+.events{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+hr{
+    width: 100%;
+}
+#pic_event{
+    width: 300px;
+    height: 150px;
+    border-radius: 20px;
+}
+#price_text{
+    font-style: bold;
+    font-size: 2rem;
+}
+.price{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+.location{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 0px 10px;
+}
+#titleEvent{
+    padding: 0px 10px;
+}
+.price a{
+    text-decoration: none;
+
+}
+#img_location{
+    width: 30px;
+    height: 30px;
+}
+#btnRead{
+    background-color: blue;
+    color: white;
+    border-radius: 10px;
+    padding: 10px 10px;
+}
+#btnRead:hover{
+    background-color: transparent;
+    color: blue;
+    transition:1.5s ;
+}
+/* footer */
+footer {
+  background-color: #3c4242;
+  margin-top: 20px;
+  border-radius: 10px;
+  flex-wrap: wrap;
+}
+.container_footer,
+.container_footer a {
+  text-decoration: none;
+  color: white;
+  list-style: none;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.hr2 {
+  width: 100%;
+  height: 1px;
+  background-color: white;
+  margin: 20px 0px;
+}
+#fin-TEXT {
+  color: white;
+  align-items: center;
+  text-align: center;
+}
+.container_footer li:hover {
+  color: red;
+}
+/* FIN FOOTER */
+
+
+
+/* services styling */
+#services{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+#img_service{
+    width: 100px;
+    height: 100px;
+}
+#service {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+#img_view{
+    width: 600px;
+    border-radius: 25px;
+}
+#img_view:hover{
+    width: 550px;
+    transition: 3s;
+}
+.div2{
+    background-color: #a2d9ff;
+    border-radius: 20px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 10px 10px;
+    color: white;
+}
+#select_price{
+    margin-bottom:20px;
+    background-color: wheat;
+    border-radius: 20px;
+}
+#header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+#descr{
+    width: 700px;
+    font-style: bold;
+    font-weight: 600;
+}
+
+/*  ======================modal styling */
+#postForm{
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+#inpForm{
+    margin-bottom: 20px;
+    outline: none;
+    border-radius: 20px;
+}
+#inpForm:focus{
+    border: 2px solid blue;
+}
+
