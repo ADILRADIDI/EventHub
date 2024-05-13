@@ -83,7 +83,6 @@
     } else {
         echo "null results";
     }
-    // id="linkHero"
     ?>
 
     <!-- footer  -->
@@ -104,14 +103,15 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form id="postForm">
-                        <input id="inpForm" type="text" name="name" id="full_name" placeholder="Full name">
+                    <form id="postForm" method="post" action="processMODAL.php">
+                        <input id="inpForm" type="text" name="full_name" placeholder="Full name">
                         <br>
-                        <input id="inpForm" type="email" name="email" id="email" placeholder="Your Email">
+                        <input id="inpForm" type="email" name="email" placeholder="Your Email">
                         <br>
-                        <input id="linkHero" type="submit" name="submit" id="submit">
+                        <input id="linkHero" href="#" type="submit" value="Submit">
                         <br>
                     </form>
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -121,7 +121,8 @@
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="main.js"></script>
+    <script src="main.js">
+    </script>
 </body>
 
 </html>

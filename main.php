@@ -32,7 +32,7 @@
     <!-- menu in header -->
     <hr>
     <div class="links">
-        <a id="lk" href="href=" main.php"">Home</a>
+        <a id="lk" href="href="#">Home</a>
         <a id="lk" href="#">home</a>
         <a id="lk" href="#">home</a>
         <a id="lk" href="#">home</a>
