@@ -6,8 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>main page</title>
     <link rel="stylesheet" href="main.css">
-
-
+    <style>.links{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    gap: 30px;
+}
+    #lk{
+        background-color: black;
+        border-radius: 20px;
+        padding: 10px 20px;
+        color: white;
+    }
+    #lK:hover{
+        background-color: transparent;
+        color: black;
+        transition: 1.5s;
+    }
+</style>
 </head>
 
 <body>
@@ -21,28 +38,29 @@
             <h1 class="logo_name">EventHub</h1>
         </div>
         <div class="div3" id="i3">
-            <input id="search" type="text" name="search" placeholder="Search">
+            
             <img id="img_search" src="./picture/search-square-svgrepo-com.svg" alt="searach_icon">
+            <input id="search" type="text" name="search" placeholder="Search">
         </div>
-        <div id="btn_create">
+        <!-- <div id="btn_create">
             <a href="" id="linkHero">Create Event</a>
-        </div>
+        </div> -->
 
     </nav>
     <!-- menu in header -->
     <hr>
     <div class="links">
-        <a id="lk" href="href="#">Home</a>
-        <a id="lk" href="#">home</a>
-        <a id="lk" href="#">home</a>
-        <a id="lk" href="#">home</a>
-        <a id="lk" href="#">home</a>
-        <a id="lk" href="#">home</a>
+        <a id="lk" href="#hero">Home</a>
+        <a id="lk" href="#events">Events</a>
+        <a id="lk" href="#services">Services</a>
+        <a id="lk" href="#ContactUs">Contact us</a>
     </div>
     <hr>
 
     <!-- section home -->
     <section id="hero">
+        <!-- <video muted autoplay loop plays-inline src="./picture/videoHero.mp4" class="background-clip">
+        </video> -->
         <h1 id="headingHero" class="hero_title">headingOne</h1>
         <marquee behavior="" direction="right">
             <p id="paragraphHero">paragraph Lorem ipsum dolor sit, amet consectetur
