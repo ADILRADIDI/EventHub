@@ -139,8 +139,12 @@ tr:hover {
       </div>
       <div class="modal-body">
         <form id="updateForm" method="post" action="updateEvent.php">
+<<<<<<< HEAD
           <input type="text" name="id" id="update-id" placeholder="ID EVENT FOR UPDATE">
           <br>
+=======
+          <input type="hidden" name="id" id="update-id">
+>>>>>>> 1d322a52aa2d56295001cfe7354b32fcfda2632e
           <input type="text" name="title" id="update-title" placeholder="Event Name">
           <br>
           <input type="text" name="description" id="update-description" placeholder="Description">

@@ -28,7 +28,10 @@ if ($conn->connect_error) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+<<<<<<< HEAD
     $eventID = $_POST['id'];
+=======
+>>>>>>> 1d322a52aa2d56295001cfe7354b32fcfda2632e
     $title = $_POST['title'];
     $description = $_POST['description'];
     $price = $_POST['price'];
@@ -36,6 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $date = $_POST['date'];
     $picture = $_POST['picture'];
 
+<<<<<<< HEAD
     $stmt = $conn->prepare("UPDATE events SET 
     title = ?, description = ?, price = ?, city = ?, date = ?, picture = ? 
     WHERE eventID = ?");
@@ -49,6 +53,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo '
             <div id="attention">
                 <img id="imgExellent" src="./picture/update.jpg" alt="">
+=======
+    $stmt = $conn->prepare("UPDATE events SET title = ?, description = ?, price = ?, city = ?, date = ?, picture = ? WHERE eventID = ?");
+    if (!$stmt) 
+        echo "Error preparing statement: " . $conn->error;
+    } else {
+        $stmt->bind_param("ssdsss", $title, $description, $price, $city, $date, $picture);
+        if ($stmt->execute()) {
+            echo '
+            <div id="attention">
+                <img id="imgExellent" src="./picture/exellent.jpg" alt="">
+>>>>>>> 1d322a52aa2d56295001cfe7354b32fcfda2632e
                 <h1>Update Event success!</h1>
                 <a id="linkHero" href="admin.php">Return to Dashboard</a>
             </div>';
@@ -57,10 +72,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
+<<<<<<< HEAD
     $stmt->close();
     $conn->close();
 }
 
+=======
+>>>>>>> 1d322a52aa2d56295001cfe7354b32fcfda2632e
 ?>
 
 

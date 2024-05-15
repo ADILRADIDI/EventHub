@@ -10,27 +10,40 @@
     display: flex;
     align-items: center;
     justify-content: center;
+<<<<<<< HEAD
     flex-wrap: wrap;
     margin: 0 auto;
     gap: 30px;
 }
     #lk,.btnSearch{
+=======
+    margin: 0 auto;
+    gap: 30px;
+}
+    #lk{
+>>>>>>> 1d322a52aa2d56295001cfe7354b32fcfda2632e
         background-color: black;
         border-radius: 20px;
         padding: 10px 20px;
         color: white;
+<<<<<<< HEAD
         text-decoration: none;
+=======
+>>>>>>> 1d322a52aa2d56295001cfe7354b32fcfda2632e
     }
     #lK:hover{
         background-color: transparent;
         color: black;
         transition: 1.5s;
     }
+<<<<<<< HEAD
     .btnSearch:hover{
         background-color: transparent;
         color: black;
         transition: 1.5s;
     }
+=======
+>>>>>>> 1d322a52aa2d56295001cfe7354b32fcfda2632e
 </style>
 </head>
 
@@ -44,12 +57,23 @@
         <div class="div3">
             <h1 class="logo_name">EventHub</h1>
         </div>
+<<<<<<< HEAD
         <!-- search -->
         <form method="post" action="search.php">
             <div id="form1">
                 <a class="btnSearch" href="search.php">Search</a>
             </div>
         </form>
+=======
+        <div class="div3" id="i3">
+            
+            <img id="img_search" src="./picture/search-square-svgrepo-com.svg" alt="searach_icon">
+            <input id="search" type="text" name="search" placeholder="Search">
+        </div>
+        <!-- <div id="btn_create">
+            <a href="" id="linkHero">Create Event</a>
+        </div> -->
+>>>>>>> 1d322a52aa2d56295001cfe7354b32fcfda2632e
 
     </nav>
     <!-- menu in header -->
