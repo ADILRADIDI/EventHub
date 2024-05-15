@@ -8,7 +8,25 @@
     <link rel="stylesheet" href="main.css">
     <script src="main.js"></script>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-
+    <style>.links{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    gap: 30px;
+}
+    #lk{
+        background-color: black;
+        border-radius: 20px;
+        padding: 10px 20px;
+        color: white;
+    }
+    #lK:hover{
+        background-color: transparent;
+        color: black;
+        transition: 1.5s;
+    }
+</style>
 </head>
 
 <body>
@@ -19,12 +37,7 @@
     </nav>
     <hr>
     <div class="links">
-        <a id="lk" href="main.php">home</a>
-        <a id="lk" href="#">home</a>
-        <a id="lk" href="#">home</a>
-        <a id="lk" href="#">home</a>
-        <a id="lk" href="#">home</a>
-        <a id="lk" href="#">home</a>
+        <a id="lk" href="main.php">Home</a>
     </div>
     <hr>
     <!-- . $row["eventID"]  -->
@@ -103,14 +116,15 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form id="postForm" method="post" action="processMODAL.php">
-                        <input id="inpForm" type="text" name="full_name" placeholder="Full name">
-                        <br>
-                        <input id="inpForm" type="email" name="email" placeholder="Your Email">
-                        <br>
-                        <input id="linkHero" href="#" type="submit" value="Submit">
-                        <br>
-                    </form>
+                <form id="postForm" method="post" action="processMODAL.php">
+                    <input id="inpForm" type="text" name="full_name" placeholder="Full name">
+                    <br>
+                    <input id="inpForm" type="email" name="email" placeholder="Your Email">
+                    <br>
+                    <input id="linkHero" type="submit" name="send" value="Submit">
+                    <br>
+                </form>
+                
 
                 </div>
                 <div class="modal-footer">
