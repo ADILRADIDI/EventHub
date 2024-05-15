@@ -12,7 +12,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+<<<<<<< HEAD
     flex-wrap: wrap;
+=======
+>>>>>>> 03a3bdc56f971ce2e890070e23d9d3b4a9bc1d0b
     margin: 0 auto;
     gap: 30px;
     }
@@ -55,6 +58,7 @@ tr:nth-child(even) {
 tr:hover {
   background-color: #e6e6e6;
 }
+<<<<<<< HEAD
     /* media for table  */
     @media screen and (max-width: 600px) {
   table {
@@ -73,6 +77,10 @@ tr:hover {
     display: none;
   }
 }
+=======
+/* modal 2 */
+
+>>>>>>> 03a3bdc56f971ce2e890070e23d9d3b4a9bc1d0b
     </style>
 </head>
 
@@ -100,16 +108,27 @@ tr:hover {
     </div>
     <hr>
     <div>
+<<<<<<< HEAD
     <table id="table_admin">
+=======
+    <table>
+>>>>>>> 03a3bdc56f971ce2e890070e23d9d3b4a9bc1d0b
   <tr>
     <th>id</th>
     <th>Title</th>
     <th>Description</th>
+<<<<<<< HEAD
     <th>Price</th>
     <th>City</th>
     <th>Date</th>
     
     <th id="tdlast">Picture</th>
+=======
+    <th>City</th>
+    <th>Date</th>
+    <th>Price</th>
+    <th>Picture</th>
+>>>>>>> 03a3bdc56f971ce2e890070e23d9d3b4a9bc1d0b
   </tr>
   <?php
             $servername = "localhost";
@@ -129,10 +148,17 @@ tr:hover {
     <td>'. $row["eventID"] .'</td>
     <td> ' . $row['title'] . '</td>
     <td> ' . $row['description'] . '</td>
+<<<<<<< HEAD
     <td> ' . $row['price'] . ' $</td>
     <td> ' . $row['city'] . '</td>
     <td> ' . $row['date'] . '</td>
     <td id="tdlast"> ' . $row['picture'] . '</td>
+=======
+    <td> ' . $row['city'] . '</td>
+    <td> ' . $row['date'] . '</td>
+    <td> ' . $row['price'] . ' $</td>
+    <td> ' . $row['picture'] . '</td>
+>>>>>>> 03a3bdc56f971ce2e890070e23d9d3b4a9bc1d0b
   </tr>
             ';
                 }
@@ -157,8 +183,17 @@ tr:hover {
       </div>
       <div class="modal-body">
         <form id="updateForm" method="post" action="updateEvent.php">
+<<<<<<< HEAD
           <input type="text" name="id" id="update-id" placeholder="ID EVENT FOR UPDATE">
           <br>
+=======
+<<<<<<< HEAD
+          <input type="text" name="id" id="update-id" placeholder="ID EVENT FOR UPDATE">
+          <br>
+=======
+          <input type="hidden" name="id" id="update-id">
+>>>>>>> 1d322a52aa2d56295001cfe7354b32fcfda2632e
+>>>>>>> 03a3bdc56f971ce2e890070e23d9d3b4a9bc1d0b
           <input type="text" name="title" id="update-title" placeholder="Event Name">
           <br>
           <input type="text" name="description" id="update-description" placeholder="Description">

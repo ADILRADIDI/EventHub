@@ -28,7 +28,14 @@ if ($conn->connect_error) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+<<<<<<< HEAD
     $eventID = $_POST['id'];
+=======
+<<<<<<< HEAD
+    $eventID = $_POST['id'];
+=======
+>>>>>>> 1d322a52aa2d56295001cfe7354b32fcfda2632e
+>>>>>>> 03a3bdc56f971ce2e890070e23d9d3b4a9bc1d0b
     $title = $_POST['title'];
     $description = $_POST['description'];
     $price = $_POST['price'];
@@ -36,6 +43,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $date = $_POST['date'];
     $picture = $_POST['picture'];
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 03a3bdc56f971ce2e890070e23d9d3b4a9bc1d0b
     $stmt = $conn->prepare("UPDATE events SET 
     title = ?, description = ?, price = ?, city = ?, date = ?, picture = ? 
     WHERE eventID = ?");
@@ -43,26 +54,55 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!$stmt) {
         echo "Error preparing statement: " . $conn->error;
     } else {
+<<<<<<< HEAD
         $stmt->bind_param("sssdsss",$eventID, $title, $description, $price, $city, 
         $date, $picture);
+=======
+        $stmt->bind_param("sssdsss", $title, $description, $price, $city, $date, $picture, $eventID);
+>>>>>>> 03a3bdc56f971ce2e890070e23d9d3b4a9bc1d0b
         
         if ($stmt->execute()) {
             echo '
             <div id="attention">
                 <img id="imgExellent" src="./picture/update.jpg" alt="">
+<<<<<<< HEAD
                 <h1>Update Event success!</h1>
                 <a id="linkHero" href="admin.php">Return to Dashboard</a>
                 '.$city.'
+=======
+=======
+    $stmt = $conn->prepare("UPDATE events SET title = ?, description = ?, price = ?, city = ?, date = ?, picture = ? WHERE eventID = ?");
+    if (!$stmt) 
+        echo "Error preparing statement: " . $conn->error;
+    } else {
+        $stmt->bind_param("ssdsss", $title, $description, $price, $city, $date, $picture);
+        if ($stmt->execute()) {
+            echo '
+            <div id="attention">
+                <img id="imgExellent" src="./picture/exellent.jpg" alt="">
+>>>>>>> 1d322a52aa2d56295001cfe7354b32fcfda2632e
+                <h1>Update Event success!</h1>
+                <a id="linkHero" href="admin.php">Return to Dashboard</a>
+>>>>>>> 03a3bdc56f971ce2e890070e23d9d3b4a9bc1d0b
             </div>';
         } else {
             echo "Error executing statement: " . $stmt->error;
         }
     }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 03a3bdc56f971ce2e890070e23d9d3b4a9bc1d0b
     $stmt->close();
     $conn->close();
 }
 
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 1d322a52aa2d56295001cfe7354b32fcfda2632e
+>>>>>>> 03a3bdc56f971ce2e890070e23d9d3b4a9bc1d0b
 ?>
 
 

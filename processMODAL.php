@@ -58,12 +58,24 @@ if (isset($_POST['send'])) {
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = TRUE;
     $mail->Username = 'adilradidi212@gmail.com';
+<<<<<<< HEAD
     $mail->Password = 'pihi qnpa tjbv rcnr';
+=======
+<<<<<<< HEAD
+    $mail->Password = 'pihi qnpa tjbv rcnr';
+=======
+    $mail->Password = '';
+>>>>>>> 1d322a52aa2d56295001cfe7354b32fcfda2632e
+>>>>>>> 03a3bdc56f971ce2e890070e23d9d3b4a9bc1d0b
     $mail->SMTPSecure = 'tls'; 
     $mail->Port = 587;
 
     $mail->setFrom('adilradidi212@gmail.com', 'ADMIN');
     $mail->addAddress($_POST['email']);
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 03a3bdc56f971ce2e890070e23d9d3b4a9bc1d0b
     $mail->Subject = 'EventHub Admin';
     $mail->Body = '
     I hope this email finds you well. My name is Adil, and I am writing to you regarding the EventHub administration.
@@ -72,6 +84,13 @@ Please let me know if you have any specific questions or concerns that you would
 Thank you for your time and consideration. I look forward to hearing from you.
 Best regards,
     ';
+<<<<<<< HEAD
+=======
+=======
+    $mail->Subject = 'Test Email';
+    $mail->Body = 'Hi, I am Adil. How are you?';
+>>>>>>> 1d322a52aa2d56295001cfe7354b32fcfda2632e
+>>>>>>> 03a3bdc56f971ce2e890070e23d9d3b4a9bc1d0b
 
     if ($mail->send()) {
         echo "<script>alert('Email sent successfully');</script>";
