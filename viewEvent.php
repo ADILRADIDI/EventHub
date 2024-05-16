@@ -125,7 +125,9 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                <form id="postForm" method="post" action="processMODAL.php">
+                <form id="postForm"  method="post" action="processMODAL.php">
+                    <!-- <input id="inpForm" type="text" name="eventID" placeholder="Event id">
+                    <br> -->
                     <input id="inpForm" type="text" name="full_name" placeholder="Full name">
                     <br>
                     <input id="inpForm" type="email" name="email" placeholder="Your Email">

@@ -33,24 +33,42 @@ if ($conn->connect_error) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $full_name = $_POST['full_name'];
     $email = $_POST['email'];
+    
+    // Insert into customers table
     $stmt = $conn->prepare("INSERT INTO customers (fullName, email) VALUES (?, ?)");
-
     if (!$stmt) {
-        echo "Error preparing statement: " . $conn->error;
+        echo "Error preparing statement for customers table: " . $conn->error;
     } else {
         $stmt->bind_param("ss", $full_name, $email);
         if ($stmt->execute()) {
-            echo '
-            <div id="attention">
-                <img src="./picture/mail.png" alt="">
-                <h1>Check your email</h1>
-                <a id="linkHero" href="main.php">Return to homepage</a>
-            </div>';
+            // Retrieve the inserted customer ID
+            $customer_id = $stmt->insert_id;
+            
+            // Insert into inscription table
+            $current_date = date("Y-m-d"); // Current date
+            $stmt_inscription = $conn->prepare("INSERT INTO inscription (customerID, 
+            Email, inscription_date) VALUES (?, ?, ?)");
+            if (!$stmt_inscription) {
+                echo "Error preparing statement for inscription table: " . $conn->error;
+            } else {
+                $stmt_inscription->bind_param("iss", $customer_id, $email, $current_date);
+                if ($stmt_inscription->execute()) {
+                    echo '
+                    <div id="attention">
+                        <img src="./picture/mail.png" alt="">
+                        <h1>Check your email</h1>
+                        <a id="linkHero" href="main.php">Return to homepage</a>
+                    </div>';
+                } else {
+                    echo "Error executing statement for inscription table: " . $stmt_inscription->error;
+                }
+            }
         } else {
-            echo "Error executing statement: " . $stmt->error;
+            echo "Error executing statement for customers table: " . $stmt->error;
         }
     }
 }
+
 
 if (isset($_POST['send'])) {
     $mail = new PHPMailer(TRUE);
@@ -58,31 +76,12 @@ if (isset($_POST['send'])) {
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = TRUE;
     $mail->Username = 'adilradidi212@gmail.com';
-<<<<<<< HEAD
     $mail->Password = 'pihi qnpa tjbv rcnr';
-=======
-<<<<<<< HEAD
-    $mail->Password = 'pihi qnpa tjbv rcnr';
-=======
-<<<<<<< HEAD
-    $mail->Password = 'pihi qnpa tjbv rcnr';
-=======
-    $mail->Password = '';
->>>>>>> 1d322a52aa2d56295001cfe7354b32fcfda2632e
->>>>>>> 03a3bdc56f971ce2e890070e23d9d3b4a9bc1d0b
->>>>>>> 12892cc8e66312b74f9c74716e827a33c38bcf89
     $mail->SMTPSecure = 'tls'; 
     $mail->Port = 587;
 
     $mail->setFrom('adilradidi212@gmail.com', 'ADMIN');
     $mail->addAddress($_POST['email']);
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 03a3bdc56f971ce2e890070e23d9d3b4a9bc1d0b
->>>>>>> 12892cc8e66312b74f9c74716e827a33c38bcf89
     $mail->Subject = 'EventHub Admin';
     $mail->Body = '
     I hope this email finds you well. My name is Adil, and I am writing to you regarding the EventHub administration.
@@ -90,17 +89,7 @@ I would like to discuss the current status of the EventHub platform and explore 
 Please let me know if you have any specific questions or concerns that you would like to address. I am available to schedule a meeting at your convenience to discuss this matter in more detail.
 Thank you for your time and consideration. I look forward to hearing from you.
 Best regards,
-    ';
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-=======
-    $mail->Subject = 'Test Email';
-    $mail->Body = 'Hi, I am Adil. How are you?';
->>>>>>> 1d322a52aa2d56295001cfe7354b32fcfda2632e
->>>>>>> 03a3bdc56f971ce2e890070e23d9d3b4a9bc1d0b
->>>>>>> 12892cc8e66312b74f9c74716e827a33c38bcf89
+        ';
 
     if ($mail->send()) {
         echo "<script>alert('Email sent successfully');</script>";
