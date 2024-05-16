@@ -2,11 +2,17 @@ body {
   background-color: white;
   font-family: Arial, Helvetica, sans-serif;
   text-decoration: none;
+  scroll-behavior: smooth;
 }
 nav {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px
+  , rgba(0, 0, 0, 0.12) 0px -12px 30px
+  , rgba(0, 0, 0, 0.12) 0px 4px 6px
+  , rgba(0, 0, 0, 0.17) 0px 12px 13px
+  , rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 #img_menu {
   width: 30px;
@@ -29,27 +35,57 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 #lk{
  text-decoration: none;
 }
+#lk:hover{
+ text-decoration: none;
+ background-color: transparent;
+ color: black;
+ transition: 1s;
+}
 
 /* section hero */
+
+
+/* #hero:hover{
+    /* filter: brightness(0.9); */
+    /* filter: blur(0.6); */
+    /* transition: 2s; */
+
 #hero{
-    background-image: url('./picture/Applause_Crowd_People_Silhouette__Cheerful_Crowd_Cheering_Stock_Vector_-_Illustration_of_clapping__excited__113960607-removebg-preview.png');
+    /* background-image: url('./picture/Applause_Crowd_People_Silhouette__Cheerful_Crowd_Cheering_Stock_Vector_-_Illustration_of_clapping__excited__113960607-removebg-preview.png'); */
+    background-image: url('https://moroccoevents.com/wp-content/uploads/2021/09/1-2.jpg');
     width: 100%;
     height: 500px;
-    
-    /* display: flex;
-    align-items: center;
-    justify-content: center; */
+    width: 100%;
+    border-radius: 20px;
+    /* filter: brightness(0.8); */
 }
+
+
 #headingHero,
 #paragraphHero,
 #linkHero{
     display: flex;
     align-items: center;
     justify-content: center;
+    color: white;
+    text-align: center;
+    
+}
+#paragraphHero{
+    color: black;
+    padding: 30px 0px;
+}
+#headingHero{
+    font-size: 2rem;
+    padding-top: 70px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-shadow: 1px 1px 2px black;
+
 }
 #linkHero{
     text-decoration: none;
@@ -62,14 +98,21 @@ nav {
     padding: 10px 20px;
    
 }
+#paragraphHero{
+    font-weight: bold;
+    font-size: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-shadow: 1px 1px 2px white;
+
+}
 #linkHero:hover{
-    background-color: transparent;
+    background-color: white;
     color: black;
     border: 2px solid black;
     transition:1.5s ;
 }
 #headingHero{
-    font-style: bold;
+    font-weight: bold;
 }
 /* section events */
 #headingevent{
@@ -200,10 +243,6 @@ footer {
     width: 600px;
     border-radius: 25px;
 }
-#img_view:hover{
-    width: 550px;
-    transition: 3s;
-}
 .div2{
     background-color: #a2d9ff;
     border-radius: 20px;
@@ -214,6 +253,7 @@ footer {
     flex-direction: column;
     padding: 10px 10px;
     color: white;
+    margin: 30px 0px;
 }
 #select_price{
     margin-bottom:20px;
@@ -230,6 +270,10 @@ footer {
     width: 700px;
     font-style: bold;
     font-weight: 600;
+    margin-left: 30px;
+    /* justify-content: center;
+    align-items: center;
+    text-align: center; */
 }
 
 /*  ======================modal styling */
@@ -249,4 +293,33 @@ footer {
 #inpForm:focus{
     border: 2px solid blue;
 }
+ /*=================== media query ===================*/
+/*---------------------------------------------------*/
+/* Media query for screens smaller than 768px (e.g., smartphones) */
+@media only screen and (max-width: 767px) {
+    #headingHero{
+        font-size: 0.8rem;
+    }
+    #paragraphHero{
+        font-size: 0.6rem;
+    }
+    .lkfin{
+        display: none;
+    }
+    #img_view{
+        width: 300px;
+    }
+    #descr{
+        width: 500px;
+    }
+}
 
+/* Media query for screens between 768px and 1024px (e.g., tablets) */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    #img_view{
+        width: 400px;
+    }
+}
+/* Media query for screens larger than 1024px (e.g., desktops) */
+@media only screen and (min-width: 1025px) {
+}
