@@ -112,34 +112,65 @@ tr:hover {
     <th id="tdlast">Picture</th>
   </tr>
   <?php
-            $servername = "localhost";
-            $username = "root";
-            $password = '';
-            $dbname = "db_eventhub";
-            $conn = new mysqli($servername, $username, $password, $dbname);
-            if ($conn->connect_error) {
-                die("Connection failed: " . $conn->connect_error);
-            }
-            $select_query = $select_query = "SELECT * FROM events";
-            $result = $conn->query($select_query);
-            if ($result->num_rows > 0) {
-                while ($row = $result->fetch_assoc()) {
-                    echo '
-                    <tr>
-    <td>'. $row["eventID"] .'</td>
-    <td> ' . $row['title'] . '</td>
-    <td> ' . $row['description'] . '</td>
-    <td> ' . $row['price'] . ' $</td>
-    <td> ' . $row['city'] . '</td>
-    <td> ' . $row['date'] . '</td>
-    <td id="tdlast"> ' . $row['picture'] . '</td>
-  </tr>
-            ';
-                }
-            } else {
-                echo "0 results";
-            }
+$servername = "localhost";
+$username = "root";
+$password = '';
+$dbname = "db_eventhub";
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
+$select_events_query = "SELECT * FROM events";
+$select_inscription_query = "SELECT * FROM inscription";
+$result_events = $conn->query($select_events_query);
+$result_inscription = $conn->query($select_inscription_query);
+
+if ($result_events->num_rows > 0) {
+    echo '<table>';
+    while ($row = $result_events->fetch_assoc()) {
+        echo '
+        <tr>
+            <td>'. $row["eventID"] .'</td>
+            <td> ' . $row['title'] . '</td>
+            <td> ' . $row['description'] . '</td>
+            <td> ' . $row['price'] . ' $</td>
+            <td> ' . $row['city'] . '</td>
+            <td> ' . $row['date'] . '</td>
+            <td id="tdlast"> ' . $row['picture'] . '</td>
+        </tr>
+        ';
+    }
+    echo '</table>';
+} else {
+    echo "0 results";
+}
+
+if ($result_inscription->num_rows > 0) {
+  echo '<table style="margin-top:50px;">';
+  echo'
+  <tr>
+    <th>id User</th>
+    <th>Email</th>
+    <th>Date inscription</th>
+    <th>ID Event</th>
+  </tr>
+  ';
+   
+    while ($row = $result_inscription->fetch_assoc()) {
+        echo '
+        <tr>
+            <td>'. $row["customerID"] .'</td>
+            <td> ' . $row['Email'] . '</td>
+            <td> ' . $row['inscription_date'] . '</td>
+            <td> ' . $row['eventID'] . '</td>
+        </tr>
+        ';
+    }
+    echo '</table>';
+} else {
+    echo "0 results";
+}
 ?>
 </table>
 </div>

@@ -33,6 +33,7 @@ if ($conn->connect_error) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $full_name = $_POST['full_name'];
     $email = $_POST['email'];
+    $eventID = $_POST['eventID'];
     
     // Insert into customers table
     $stmt = $conn->prepare("INSERT INTO customers (fullName, email) VALUES (?, ?)");
@@ -46,12 +47,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             
             // Insert into inscription table
             $current_date = date("Y-m-d"); // Current date
-            $stmt_inscription = $conn->prepare("INSERT INTO inscription (customerID, 
-            Email, inscription_date) VALUES (?, ?, ?)");
+            $stmt_inscription = $conn->prepare("INSERT INTO 
+            inscription (customerID, 
+            Email, inscription_date,eventID) VALUES (?, ?, ?,?)");
             if (!$stmt_inscription) {
                 echo "Error preparing statement for inscription table: " . $conn->error;
             } else {
-                $stmt_inscription->bind_param("iss", $customer_id, $email, $current_date);
+                $stmt_inscription->bind_param("issi", $customer_id, $email, 
+                $current_date,$eventID);
                 if ($stmt_inscription->execute()) {
                     echo '
                     <div id="attention">

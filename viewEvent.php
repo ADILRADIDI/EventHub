@@ -58,6 +58,7 @@
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
             echo '
+            
     <div class="container">
         <div class="div1">
             <h4>' . $row['title'] . '</h4>
@@ -126,8 +127,8 @@
                 </div>
                 <div class="modal-body">
                 <form id="postForm"  method="post" action="processMODAL.php">
-                    <!-- <input id="inpForm" type="text" name="eventID" placeholder="Event id">
-                    <br> -->
+                    <input type="hidden" name="eventID" value="<?php echo $eventID; ?>"> 
+                    <br>
                     <input id="inpForm" type="text" name="full_name" placeholder="Full name">
                     <br>
                     <input id="inpForm" type="email" name="email" placeholder="Your Email">
